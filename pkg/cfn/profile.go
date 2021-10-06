@@ -58,6 +58,16 @@ func (p Profile) getContentAsNumber(xpath string) int {
 	return i
 }
 
+func (p Profile) GetDevice() string {
+	const xpath = `//div[contains(@class, 'playerStatus')]/div[1]/p`
+	return p.getContentAsString(xpath)
+}
+
+func (p Profile) GetStatus() string {
+	const xpath = `//div[contains(@class, 'playerStatus')]/div[2]/p`
+	return p.getContentAsString(xpath)
+}
+
 func (p Profile) GetLeague() string {
 	const xpath = `//div[contains(@class, 'leagueInfo')]/dl[1]/dd/img`
 

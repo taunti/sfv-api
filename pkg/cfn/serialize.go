@@ -20,6 +20,8 @@ type Character struct {
 type Serialized struct {
 	Id              string    `json:"id"`
 	Region          string    `json:"region"`
+	Device          string    `json:"device"`
+	Status          string    `json:"status"`
 	Title           string    `json:"title"`
 	Dojo            string    `json:"dojo"`
 	Twitter         string    `json:"twitter"`
@@ -41,6 +43,8 @@ func (p Profile) ToJSON() (response []byte) {
 	serialized := Serialized{
 		Id:           p.GetFighterId(),
 		Region:       p.GetRegion(),
+		Device:       p.GetDevice(),
+		Status:       p.GetStatus(),
 		Title:        p.GetTitle(),
 		Dojo:         p.GetDojo(),
 		Twitter:      p.GetTwitter(),
